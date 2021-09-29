@@ -1,0 +1,154 @@
+---
+title: "1-Revisiting data"
+#bibliography: bib.bib
+link-citations: yes
+date: "`r format (Sys.time(), format='%Y-%m-%d %H:%M:%S %z')`"
+output: 
+  pdf_document:
+    pandoc_args: 
+      - '../common.yaml'
+      - --listings
+    includes: 
+      in_header: '../preamble.tex'
+    toc: true
+    number_sections: true
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+    df_print: tibble
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+```
+
+
+\newpage
+
+# Description
+
+Single-cell
+
+# Load data and packages 
+
+```{r echo=TRUE}
+library(Seurat)
+load(file="../../../Data/Objects/Subset.integrated.rds")
+```
+
+An R object `Subset.integrated` obtained, containing the follwing information:  
+
+```{r}
+Subset.integrated
+```
+
+Check metadata: in `Subset.integrated`, metadata contains the following data: 
+
+```{r}
+names(Subset.integrated@meta.data)
+```
+
+Show some important data: 
+```{r echo=TRUE}
+apply(Subset.integrated@meta.data [c("orig.ident", "hash.ID", "SCT_snn_res.0.2", "seurat_clusters", 
+                                     "Clustering", "Sample", "Sample_Cluster", "Genotype", 
+                                     "Treatment", "Global", "RNA_snn_res.0.5", "RNA_snn_res.15", 
+                                    "SingleR.labels", "Annotation")], 2, table)
+```
+
+# Ploting with previous analysis (done by Arnaud)
+
+> An analysis script can be found in "../Data/Objects/Main_Script.R"
+
+```{r echo=TRUE}
+source("../../../Data/Objects/Main_Script.R")
+```
+
+
+# Try Merge instead of integrate
+
+Merge all the samples of 
+```{r}
+sample.list <- unique(Subset.integrated$Sample)
+sample.list
+```
+
+Merge with Merge:
+```{r}
+subset.merge <- merge(subset(Subset.integrated, subset = Sample == sample.list[1]), sapply(sample.list[2:length(sample.list)], function(x) subset(Subset.integrated, subset = Sample == x)))
+subset.merge
+```
+
+## Data processing
+
+```{r echo=TRUE}
+subset.merge <- NormalizeData(subset.merge)
+subset.merge <- ScaleData(subset.merge ,features = rownames(subset.merge))
+subset.merge <- FindVariableFeatures(subset.merge)
+subset.merge <- RunPCA(subset.merge, features = VariableFeatures(subset.merge))
+subset.merge <- FindNeighbors(subset.merge, reduction = "pca", dims = 1:15)
+subset.merge <- RunUMAP(subset.merge, dims = 1:15)
+```
+
+## Compare integrated and Merged
+
+```{r fig.width=6, fig.height=4}
+DimPlot(subset.merge, split.by = "Sample", reduction = "umap", ncol = 3) + ggtitle("Merged")
+```
+
+```{r fig.width=6, fig.height=4}
+DimPlot(Subset.integrated, split.by = "Sample", reduction = "umap", ncol = 3) + ggtitle("Integrated")
+```
+
+# Clustering after merge
+
+Give a resolution of 0.3: 
+
+```{r fig.width=6, fig.height=4}
+subset.merge <- FindClusters(subset.merge, resolution = 0.3)
+DimPlot(subset.merge, split.by = "Sample", ncol = 3)
+```
+
+*IL4-treated WT has biggest difference. Cluster 1 is the difference.*
+
+Batch effect? Voici PCA plot: 
+
+```{r fig.width=6, fig.height=4}
+DimPlot(subset.merge, split.by = "Sample", reduction = "pca", ncol = 3)
+```
+
+*It seems not to be a batch effect*
+
+## Find the marker of Cluster 1
+
+```{r}
+de.ident1 <- FindMarkers(subset.merge, ident.1 = "1", only.pos = TRUE)
+de.ident1
+```
+
+IL4ra is in the DE genes: 
+
+```{r}
+FeaturePlot(subset.merge, features = "Il4ra")
+```
+
+
+## KEGG enrichment
+
+```{r echo=TRUE}
+library(clusterProfiler)
+
+de_entrez.ident1 <- bitr( geneID = rownames(de.ident1), fromType = "SYMBOL", toType = "ENTREZID", OrgDb = "org.Mm.eg.db", drop = TRUE ) $ ENTREZID
+result.enrichKEGG.de_ident1 <- enrichKEGG(de_entrez.ident1, organism = "mmu", keyType = "ncbi-geneid")
+result.enrichKEGG.de_ident1@result$Description
+```
+
+
+
+# Session information 
+```{r}
+sessionInfo()
+```
+
+# (References)
+
