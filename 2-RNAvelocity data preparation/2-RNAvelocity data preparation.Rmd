@@ -150,7 +150,7 @@ for (name.sample in list.name.sample) {
 }
 ```
 
-*All the samples have the same unfound genes (15 genes with redundant symbols). *
+*All the samples have the same unfound genes (34 genes with redundant symbols). Why? They were mapped in different transcriptome build? *
 
 Remove the redundant genes: 
 
@@ -172,34 +172,7 @@ for (name.sample in list.name.sample) {
   }
 ```
 
-*Except LBA_Hum7, other loomsome cells are not in other loom files. So remove them.* 
-
-Remove cells that not in Seurat object. 
-
-```{r}
-# important to skip the all-done sample: 
-list.name.sample.remained <- list.name.sample[!list.name.sample == "LBA_Hum7"]
-
-
-for (name.sample in list.name.sample.remained) {
-  obj.name <- paste(name.sample, "seuratObject", sep = ".")
-  loom.name <- paste(name.sample, "loom", sep = ".")
-  ldat.name <- paste(name.sample, "ldat", "filtered", sep = ".")
-  cells.toRemove <- get(paste(name.sample, "ldat.filtered", sep = "."))
-    
-  cellnames <- colnames(obj.list[[obj.name]])
-  cellnames.new <- cellnames[-which(cellnames %in% cells.toRemove)]
-  
-  assign(ldat.name, 
-         value = filterLoom(loomObj = get(loom.name),
-                                geneList = genes.new,
-                                cellList = cellnames.new ))
-
-  # now we have to also filter seurat object by new cells: 
-  assign(obj.name, 
-         value = obj.list[[obj.name]] [ , cellnames.new] )
-  }
-```
+*ALL FINE!*
 
 Make list of Seurat objects and ldat objects, each under ther sample same.
 
@@ -253,6 +226,7 @@ for (sample.name in list.name.sample) {
 }
 
 seurat.merge <- seurat.combined[ , cellnames]
+seurat.merge
 ```
 
 ```{r}
@@ -284,7 +258,7 @@ ldat.merge <- list(spliced=spliced,
 Now separate them by group. 
 
 ```{r}
-groupBy <- "group"
+groupBy <- "Sample"
 sample.groupBy <- unique(seurat.merge@meta.data[[groupBy]])
 
 obj <- list()
@@ -336,31 +310,18 @@ saveRDS(obj, file = "./obj_group_by_group.list.loom_surat.Rds")
 To facilitate the work, we optimized Seurat `Convert` function to merge a Seurat/Loom list to one Loom file, containing the var matrix with spliced, unspliced layers and obs with all embedding, tsne, umap, pca, clustering, etc. 
 A Loom file issue from the function above `Convert.seurat_loom` will be saved in the current working folder.
 
-For "Non fumer" 
-
 ```{r eval=FALSE}
 library(loomR)
-source("../../R/Convert_Seurat_loom.R")
-obj.sl <- obj$`No fumer`
-pfile <- Convert.seurat_loom(from = obj.sl, to = "loom", filename = "No_Fumer.loom" )
-pfile$close_all()
+source("~/Desktop/velocyto/Script/Convert_Seurat_loom.R")
+
+for (sample.name in sample.groupBy) {
+  obj.sl <- obj[[sample.name]]
+  pfile <- Convert.seurat_loom(from = obj.sl, to = "loom", filename = paste0(sample.name, ".loom") )
+  pfile$close_all()
+}
+
 ```
 
-For "Fumer":
-
-```{r eval=FALSE}
-obj.sl <- obj$Fumer
-pfile <- Convert.seurat_loom(from = obj.sl, to = "loom", filename = "Fumer.loom" )
-pfile$close_all()
-```
-
-For "COPD":
-
-```{r eval=FALSE}
-obj.sl <- obj$COPD
-pfile <- Convert.seurat_loom(from = obj.sl, to = "loom", filename = "COPD.loom" )
-pfile$close_all()
-```
 
 ## scVelo analysis with dynamical model
 
