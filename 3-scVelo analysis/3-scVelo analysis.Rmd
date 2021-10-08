@@ -1,6 +1,6 @@
 ---
 title: "3-scVelo analysis"
-#bibliography: bib.bib
+bibliography: bib.bib
 link-citations: yes
 date: "`r format (Sys.time(), format='%Y-%m-%d %H:%M:%S %z')`"
 output: 
@@ -19,7 +19,7 @@ output:
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = TRUE)
 ```
 
 
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
 
 # Description
 
-Single-cell
+For each sample, the counts for unspliced- and ambiguous transcripts were calculated from CellRanger output using velocyto command-line tool (http://velocyto.org)[@LaManno2018] and saved in loom files. The single-cell RNA velocities were estimated using scVelo toolkit (https://scvelo.readthedocs.io)[@Bergen2020]. Briefly, the loom files were used as input for scVelo analysis. Genes with minimum 20 of both unspliced and spliced counts and on the top list of 2000 genes were filtered, normalized and log transformed (scv.pp.filter_and_normalize with default parameters). Thirty principal components (PCs) and 30 neighbors obtained from euclidean distances in PCA space were used for computing first-/second-order moments for each cell. We used generalized dynamical modeling to recover the full splicing kinetics of spliced genes and the single-cell RNA velocities were plotted with the same cluster labels and embedding as used in previous analyses. 
 
 # scVelo analysis with dynamical model
 
@@ -37,7 +37,6 @@ Single-cell
 
 The following codes were used to calculate scRNA velocity and presenting with the existing embedding and labels. 
 
-## For "KO_Hp"
 
 ```{python eval=FALSE}
 # python below
@@ -64,6 +63,11 @@ scv.pl.velocity_embedding_stream(ldata_basal, basis='umap_cell_embeddings', colo
                                  title="scVelo analysis", save="KO_Hp.png"
                                 )
 ```
+
+# Results
+
+## For "KO_Hp"
+
 ![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_KO_Hp.png)
 
 ## For "KO_IL4C"
@@ -86,10 +90,41 @@ scv.pl.velocity_embedding_stream(ldata_basal, basis='umap_cell_embeddings', colo
 
 ![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_WT_Naive.png)
 
+## For "KO_Hp_zoom"
+
+![scVelo results for "KO_Hp_zoom" grouped sample](jupyter_notebook/figures/scvelo_KO_Hp_zoom.png)
+
+## For "KO_IL4C_zoom"
+
+
+![scVelo results for "KO_IL4C_zoom" grouped sample](jupyter_notebook/figures/scvelo_KO_IL4C_zoom.png)
+
+## For "KO_Naive_zoom"
+
+
+![scVelo results for "KO_Naive_zoom" grouped sample](jupyter_notebook/figures/scvelo_KO_Naive_zoom.png)
+
+## For "WT_Hp_zoom"
+
+
+![scVelo results for "WT_Hp_zoom" grouped sample](jupyter_notebook/figures/scvelo_WT_Hp_zoom.png)
+
+## For "WT_IL4C_zoom"
+
+
+![scVelo results for "WT_IL4C_zoom" grouped sample](jupyter_notebook/figures/scvelo_WT_IL4C_zoom.png)
+
+## For "WT_Naive_zoom"
+
+
+![scVelo results for "WT_Naive_zoom" grouped sample](jupyter_notebook/figures/scvelo_WT_Naive_zoom.png)
+
+
+
 # Session information 
 ```{r}
 sessionInfo()
 ```
 
-# (References)
+# References
 
