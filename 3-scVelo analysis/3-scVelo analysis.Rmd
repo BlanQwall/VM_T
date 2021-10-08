@@ -37,7 +37,7 @@ Single-cell
 
 The following codes were used to calculate scRNA velocity and presenting with the existing embedding and labels. 
 
-## For "Non-fumer"
+## For "KO_Hp"
 
 ```{python eval=FALSE}
 # python below
@@ -47,7 +47,7 @@ scv.settings.presenter_view = True  # set max width size for presenter view
 scv.set_figure_params('scvelo')  # for beautified visualization
 
 # load data
-ldata_basal = scv.read("./No_Fumer.loom")
+ldata_basal = scv.read("./KO_Hp.loom")
 
 # Preprocess the Data
 scv.pp.filter_and_normalize(ldata_basal, min_shared_counts=20, n_top_genes=2000)
@@ -59,14 +59,32 @@ scv.tl.velocity(ldata_basal, mode='dynamical')
 scv.tl.velocity_graph(ldata_basal)
 scv.pl.velocity_embedding_stream(ldata_basal, basis='umap_cell_embeddings', color='seurat_clusters', 
                                  figsize=(10,10), components='1,2', 
-                                 palette=["#2E359A", "#FC990E", "#720D0D", "#6E9BD8"], 
+                                 palette=["#2E359A", "#FC990E", "#720D0D"], 
                                  linewidth=1.4, 
-                                 title="scVelo analysis", save="No_Fumer.png"
+                                 title="scVelo analysis", save="KO_Hp.png"
                                 )
 ```
-![scVelo results for "Non fumer" grouped sample](Results/scvelo_No_Fumer.png)
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_KO_Hp.png)
 
+## For "KO_IL4C"
 
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_KO_IL4C.png)
+
+## For "KO_Naive"
+
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_KO_Naive.png)
+
+## For "WT_Hp"
+
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_WT_Hp.png)
+
+## For "WT_IL4C"
+
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_WT_IL4C.png)
+
+## For "WT_Naive"
+
+![scVelo results for "KO_Hp" grouped sample](jupyter_notebook/figures/scvelo_WT_Naive.png)
 
 # Session information 
 ```{r}
