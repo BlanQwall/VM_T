@@ -13,6 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library(Seurat)
 ```
 
+IS sample human or mouse? 
+```{r}
+is.human <- FALSE
+```
+
 
 ```{r}
 load("../../Data/Objects/")
@@ -62,7 +67,16 @@ write.table(chip.table, file = "./genename.chip", sep = "\t", quote = FALSE, row
 make a chip file for all: 
 ```{r}
 gene.ref <- read.csv("../../Data/Counts_folder/Counts/cDNA-KO-IL4C/outs/filtered_feature_bc_matrix/features.tsv.gz", sep = "\t", header = FALSE, as.is = TRUE)[ , 2]
-chip.table <- data.frame('Probe Set ID'=gene.ref, 'Gene Symbol'=gene.ref, 'Gene Title'=gene.ref) # the title should edited with a text editor. space is not allowed here and will be converted to point. 
+if (!is.human) { 
+  library(nichenetr)
+  ref.mouse <- nichenetr::convert_mouse_to_human_symbols(gene.ref)
+  chip.table <- data.frame('Probe Set ID'=gene.ref, 'Gene Symbol'=ref.mouse, 'Gene Title'=gene.ref) 
+} else {
+    chip.table <- data.frame('Probe Set ID'=gene.ref, 'Gene Symbol'=gene.ref, 'Gene Title'=gene.ref) 
+  }
+
+# the title should edited with a text editor. space is not allowed here and will be converted to point. 
+
 write.table(chip.table, file = "./geneRef.chip", sep = "\t", quote = FALSE, row.names = FALSE)
 ```
 
