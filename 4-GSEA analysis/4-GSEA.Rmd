@@ -1,0 +1,131 @@
+---
+title: "5-GSEA"
+bibliography: bib.bib
+link-citations: yes
+date: "`r format (Sys.time(), format='%Y-%m-%d %H:%M:%S %z')`"
+output: 
+  pdf_document:
+    pandoc_args: 
+      - '../../common.yaml'
+      - --listings
+    includes: 
+      in_header: '../../preamble.tex'
+    toc: true
+    number_sections: true
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+    df_print: tibble
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+
+\newpage
+
+# Description
+
+For Gene Set Enrichment Analysis (GSEA)[@GSEA], the normalized data shown in Figure 4A were used as expression dataset and clustering information was used as phenotype data to test the AFlo and AFhi AM signatures obtained above from bulk RNA-seq data and genesets available in MSigDB database. Normalized Enrichment Score (NES), FDR and nominal p-value were calculated with 300 permutations (100 permutations for testing MSigDB genesets) between samples from different phenotypes. 
+
+> NOTICE: the intermediate files used as input for GSEA were not synchronized on the platform due to the size limit. However, these files could be generated in the following steps. 
+
+
+# Preparation of data for GSEA
+
+The following files were used as input for GSEA analyses: 
+
+`AssayData_RNA_data_all_monocytes_all_sample.txt` - Exported expression matrix from `GetAssayData(object, slot = "data", assay = "RNA")` of Seurat package[@SeuratV4]. 
+
+`Class_all_monocytes_all_sample_with_header.cls` - Class file generated from metadata of `SeuratObject@meta.data$seurat_clusters`
+
+`geneRef.chip` - Gene reference file generated from CellRanger output `outs/raw_feature_bc_matrix/features.tsv.gz`
+
+`<geneset>.gmt` - Geneset files download from ftp.broadinstitute.org
+
+
+# Compare cluster 1 to cluster 0 with gene_sets in Molecular Signatures Database (MSigDB)
+
+The following codes were used to launch each of GSEA analyses:
+
+## Cluster1vsCluster0_GO_MF
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c5.go.mf.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_GO_MF -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_GO_CC
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c5.go.cc.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_GO_CC -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_GO_BP
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c5.go.bp.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_GO_BP -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_Tft_GTRD
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c3.tft.gtrd.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_Tft_GTRD -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_Tft
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c3.tft.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_Tft -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_WikiPathways
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c2.cp.wikipathways.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_WikiPathways -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_REACTOME
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c2.cp.reactome.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_REACTOME -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_KEGG
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c2.cp.kegg.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_KEGG -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+## Cluster1vsCluster0_BioCarta
+
+```{bash eval=FALSE}
+gsea-cli.sh GSEA -res /AssayData_RNA_data_all_monocytes_all_sample.txt -cls /Class_all_monocytes_all_sample_with_header.cls#1_versus_0 -gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c2.cp.biocarta.v7.4.symbols.gmt -collapse Collapse -mode Max_probe -norm meandiv -nperm 100 -permute phenotype -rnd_type no_balance -scoring_scheme weighted -rpt_label Cluster1vsCluster0_BioCarta -metric Signal2Noise -sort real -order descending -chip /geneRef.chip -create_gcts false -create_svgs false -include_only_symbols true -make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp -save_rnd_lists false -set_max 500 -set_min 15 -zip_report false -out /GSEA_results
+```
+
+# Results
+
+All GSEA results were not presented in the manuscript but can be found via the link:
+
+[https://github.com/BlanQwall/Human_monocytes_and_AM/tree/main/scRNAseq_analysis/5-GSEA/GESA_results](https://github.com/BlanQwall/Human_monocytes_and_AM/tree/main/scRNAseq_analysis/5-GSEA/GESA_results) 
+
+# Session information 
+
+Java version
+
+```{bash}
+java -version
+```
+
+GSEA version
+```
+GSEA v4.1.0 [build: 27]
+```
+
+```{bash}
+uname -a
+```
+
+
+# References
+

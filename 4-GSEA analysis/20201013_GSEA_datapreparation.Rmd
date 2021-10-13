@@ -1,0 +1,68 @@
+---
+title: "20201201_data_preparation"
+author: "BAI Qiang, PhD"
+date: "`r format (Sys.time(), format='%Y-%m-%d %H:%M:%S %z')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(Seurat)
+```
+
+
+```{r}
+load("../../Data/Objects/")
+so <- Zoom.integrated
+DimPlot(so)
+```
+
+```{r}
+expr.table <- GetAssayData(so, slot = "data", assay = "integrated")
+expr.table <- as.data.frame(expr.table)
+row.info <- data.frame(NAME=rownames(expr.table), DESCRIPTION=rownames(expr.table))
+expr.table <- cbind(row.info, expr.table)
+
+write.table(expr.table, file = "./AssayData_integrated_data_Zoom_memory_T.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+
+# metadata: 
+cls.table <- matrix(as.character(so@meta.data$seurat_clusters), nrow = 1)
+write.table(cls.table, file = "./Class_Zoom_memory_T.cls", sep = " ", quote = FALSE, col.names = FALSE, row.names = FALSE) # pay attention to the row.names=FALSE, or it will add row 1 to the head. 
+
+# this file need to be added manually 2 line in the head of file: 
+# bash: see the below chunks for command paste.
+# (echo "# 0 2 3 1" && cat Class_all_monocytes_all_sample.cls) > Class_all_monocytes_all_sample_add_1line
+# (echo "29325 4 1" && cat Class_all_monocytes_all_sample_add_1line) > Class_all_monocytes_all_sample_with_header.cls
+```
+
+Paste the command for adding the 1line: 
+```{r}
+cat("(echo \"# ", paste(unique(as.character(so$seurat_clusters)), collapse = " "), "\" && cat Class_Zoom_memory_T.cls) > Class_Zoom_memory_T_add_1line", sep = "")
+```
+
+Paste the 2nd command to finish: 
+```{r}
+cat("(echo \"", ncol(so), " ", length(unique(as.character(so$seurat_clusters))), " 1\" && cat Class_Zoom_memory_T_add_1line) > Class_Zoom_memory_T_with_header.cls", sep = "")
+```
+
+
+
+```{r}
+
+# chip data: 
+chip.table <- data.frame('Probe Set ID'=expr.table$NAME, 'Gene Symbol'=expr.table$NAME, 'Gene Title'=expr.table$NAME) # the title should edited with a text editor. space is not allowed here and will be converted to point. 
+write.table(chip.table, file = "./genename.chip", sep = "\t", quote = FALSE, row.names = FALSE)
+
+```
+
+
+make a chip file for all: 
+```{r}
+gene.ref <- read.csv("../../Data/Counts_folder/Counts/cDNA-KO-IL4C/outs/filtered_feature_bc_matrix/features.tsv.gz", sep = "\t", header = FALSE, as.is = TRUE)[ , 2]
+chip.table <- data.frame('Probe Set ID'=gene.ref, 'Gene Symbol'=gene.ref, 'Gene Title'=gene.ref) # the title should edited with a text editor. space is not allowed here and will be converted to point. 
+write.table(chip.table, file = "./geneRef.chip", sep = "\t", quote = FALSE, row.names = FALSE)
+```
+
