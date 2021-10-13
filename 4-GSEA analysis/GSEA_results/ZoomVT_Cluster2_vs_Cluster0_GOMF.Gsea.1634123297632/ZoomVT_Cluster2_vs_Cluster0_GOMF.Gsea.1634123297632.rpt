@@ -1,0 +1,34 @@
+producer_class	xtools.gsea.Gsea
+producer_timestamp	1634123297632
+param	zip_report	false
+param	num	100
+param	scoring_scheme	weighted
+param	norm	meandiv
+param	out	/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/VM_T/4-GSEA analysis/GSEA_results
+param	mode	Max_probe
+param	include_only_symbols	true
+param	set_max	500
+param	gmx	ftp.broadinstitute.org://pub/gsea/gene_sets/c5.go.mf.v7.4.symbols.gmt
+param	plot_top_x	20
+param	nperm	100
+param	order	descending
+param	rpt_label	ZoomVT_Cluster2_vs_Cluster0_GOMF
+param	rnd_seed	timestamp
+param	set_min	15
+param	res	/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/VM_T/4-GSEA analysis/AssayData_integrated_data_Zoom_memory_T.txt
+param	chip	/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/VM_T/4-GSEA analysis/geneRef.chip
+param	create_svgs	false
+param	cls	/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/VM_T/4-GSEA analysis/Class_Zoom_memory_T_with_header.cls#2_versus_0
+param	sort	real
+param	create_gcts	false
+param	help	false
+param	save_rnd_lists	false
+param	median	false
+param	metric	Signal2Noise
+param	make_sets	true
+param	rnd_type	no_balance
+param	gui	false
+param	permute	phenotype
+param	collapse	Collapse
+
+file	/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/VM_T/4-GSEA analysis/GSEA_results/ZoomVT_Cluster2_vs_Cluster0_GOMF.Gsea.1634123297632/index.html
