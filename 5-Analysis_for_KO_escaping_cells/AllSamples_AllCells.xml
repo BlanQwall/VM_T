@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="mm10" hasGeneTrack="true" hasSequenceTrack="true" locus="chr7:125543664-125587540" version="8">
+    <Resources>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Naive/outs/possorted_genome_bam.bam"/>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-IL4C/outs/possorted_genome_bam.bam"/>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-IL4C/outs/possorted_genome_bam.bam"/>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Hp/outs/possorted_genome_bam.bam"/>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Naive/outs/possorted_genome_bam.bam"/>
+        <Resource path="../../../../../../../../run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Hp/outs/possorted_genome_bam.bam"/>
+    </Resources>
+    <Panel height="112" name="Panel1635157256617" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="255,0,0" colorScale="ContinuousColorScale;0.0;2513.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Hp/outs/possorted_genome_bam.bam_coverage" name="KO_HP" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="255,0,0" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Hp/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="121" name="Panel1635157308415" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="255,0,0" colorScale="ContinuousColorScale;0.0;3083.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-IL4C/outs/possorted_genome_bam.bam_coverage" name="KO_IL4c" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="255,0,0" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-IL4C/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="121" name="Panel1635157350895" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="255,0,0" colorScale="ContinuousColorScale;0.0;2833.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Naive/outs/possorted_genome_bam.bam_coverage" name="KO_Naive" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="255,0,0" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-KO-Naive/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="121" name="Panel1635157374996" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="51,51,255" colorScale="ContinuousColorScale;0.0;3254.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Hp/outs/possorted_genome_bam.bam_coverage" name="WT_HP" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="51,51,255" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Hp/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="121" name="Panel1635157404241" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="51,51,255" colorScale="ContinuousColorScale;0.0;5175.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-IL4C/outs/possorted_genome_bam.bam_coverage" name="WT_IL4c" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="51,51,255" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-IL4C/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="136" name="Panel1635157429012" width="1901">
+        <Track autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" color="51,51,255" colorScale="ContinuousColorScale;0.0;2873.0;255,255,255;175,175,175" fontSize="20" height="40" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Naive/outs/possorted_genome_bam.bam_coverage" name="WT_Naive" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="400.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" color="51,51,255" fontSize="10" height="60" id="/run/user/1001/gvfs/smb-share:server=massstorage.giga.priv,share=u224904/_SHARE_/Research/III/IMMUNOPHYSIO/PLATFORMS/GEN/BDewaels_scRNAseq_CD8_T_cells/cDNA-WT-Naive/outs/possorted_genome_bam.bam_junctions" name="possorted_genome_bam.bam Junctions" visible="true"/>
+    </Panel>
+    <Panel height="56" name="FeaturePanel" width="1901">
+        <Track clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" visible="true"/>
+        <Track clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" colorScale="ContinuousColorScale;0.0;406.0;255,255,255;0,0,178" fontSize="10" height="35" id="mm10_genes" name="Refseq genes" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.010817307692307692,0.15144230769230768,0.30288461538461536,0.4543269230769231,0.6057692307692307,0.7572115384615384,0.9266826923076923"/>
+    <Regions>
+        <Region chromosome="chr7" description="Floxed" end="125574499" start="125570771"/>
+    </Regions>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>
