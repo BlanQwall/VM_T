@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="mm10" hasGeneTrack="true" hasSequenceTrack="true" locus="chr7:125550282-125581474" version="8">
+    <Resources>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster11.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster5.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster14.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster4.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster8.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster3.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster9.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster10.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster12.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster7.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster2.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster1.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster13.cellnameSubset.bam"/>
+        <Resource path="../../Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster6.cellnameSubset.bam"/>
+    </Resources>
+    <Panel height="954" name="Panel1635285153306" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;60.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster1.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster1.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="60.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster1.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster1.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster1.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster1.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="422" name="Panel1635285153324" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;24.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster10.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster10.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="24.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster10.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster10.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster10.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster10.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="170" name="Panel1635285153423" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;10.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster11.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster11.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster11.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster11.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster11.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster11.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="240" name="Panel1635285153451" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;10.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster12.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster12.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster12.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster12.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster12.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster12.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="198" name="Panel1635285153476" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;10.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster13.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster13.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster13.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster13.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster13.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster13.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="101" name="Panel1635285153500" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;10.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster14.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster14.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster14.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster14.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster14.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster14.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="548" name="Panel1635285153537" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;33.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster2.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster2.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="33.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster2.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster2.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster2.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster2.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="492" name="Panel1635285153564" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;28.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster3.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster3.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="28.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster3.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster3.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster3.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster3.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="828" name="Panel1635285153601" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;53.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster4.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster4.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="53.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster4.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster4.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster4.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster4.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="506" name="Panel1635285153654" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;28.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster5.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster5.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="28.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster5.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster5.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster5.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster5.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="450" name="Panel1635285153691" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;25.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster6.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster6.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="25.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster6.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster6.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster6.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster6.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="576" name="Panel1635285153719" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;35.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster7.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster7.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="35.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster7.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster7.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster7.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster7.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="366" name="Panel1635285153746" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;20.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster8.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster8.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="20.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster8.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster8.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster8.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster8.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="478" name="Panel1635285153779" width="1829">
+        <Track autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;27.0;255,255,255;175,175,175" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster9.cellnameSubset.bam_coverage" name="cellnames_KO_Naive_in_cluster9.cellnameSubset.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="27.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster9.cellnameSubset.bam_junctions" name="cellnames_KO_Naive_in_cluster9.cellnameSubset.bam Junctions" visible="false"/>
+        <Track clazz="org.broad.igv.sam.AlignmentTrack" displayMode="EXPANDED" experimentType="OTHER" fontSize="10" id="/mnt/Data/Single-cell_Analysis/Projects/External_Projects/Benjamin_D/Counts/subset_BAM/20211025/cellnames_KO_Naive_in_cluster9.cellnameSubset.bam" name="cellnames_KO_Naive_in_cluster9.cellnameSubset.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="40" name="FeaturePanel" width="1829">
+        <Track clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" visible="true"/>
+        <Track clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" colorScale="ContinuousColorScale;0.0;406.0;255,255,255;0,0,178" fontSize="10" height="35" id="mm10_genes" name="Refseq genes" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.009937888198757764,0.05962732919254658,0.12795031055900621,0.19627329192546583,0.2645962732919255,0.33291925465838507,0.4012422360248447,0.46956521739130436,0.537888198757764,0.6062111801242236,0.6745341614906832,0.7428571428571429,0.8111801242236025,0.8795031055900621,0.9478260869565217"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

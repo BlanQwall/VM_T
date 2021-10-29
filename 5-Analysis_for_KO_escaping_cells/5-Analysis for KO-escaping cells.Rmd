@@ -27,7 +27,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
 # Description
 
-Il4ra-KO cells are less favored for proliferation thus risked to be outcompete.   
+Il4ra-KO cells are less favored for proliferation thus risked to be outcompeted. We should be able to observe difference of read alignment and covering on the Il4ra locus. 
 
 
 # Alignement of reads in Il4a for all cells
@@ -73,7 +73,7 @@ for (cluster.name in cluster.list) {
 
 
   for (x in sample.list) {
-  meta.data <- so[[]]
+  meta.data <- so.cluster[[]]
   cellnames <- rownames(meta.data[meta.data[["Sample"]] == x, ])
   cellnames <- sub(x = cellnames, pattern = "_[0-9]", replacement = "-1" ) # we can change postfixes with 1 because we are sure these cells came from one unique sample. 
 
@@ -119,6 +119,8 @@ meta.cellnames.file$bam.file.temp.path <- file.path(output.dir,
 Make BAM subset: 
 
 ```{r}
+script.subset_bam <- "../../Scripts/20211026_subset_bam.sh"
+
 out.file.list <- character()
 
 for (i in 1:nrow(meta.cellnames.file)) {
@@ -132,13 +134,33 @@ for (i in 1:nrow(meta.cellnames.file)) {
   out.file.list <- append(out.file.list, out.file)
   com.subset <- paste("subset-bam_linux", com.subset.arg)
   com.subset.list <- append(com.subset.list, com.subset)
-  system(com.subset)
+  #system(com.subset)
+  cat(com.subset, file=script.subset_bam, append = TRUE, sep="\n")
   
   com.index <- paste("samtools index", out.file)
   com.index.list <- append(com.index.list, com.index)
-  system(com.index)
+  #system(com.index)
+  cat(com.index, file = script.subset_bam, append = TRUE, sep="\n")
 
 }
+
+meta.cellnames.file$subset.bam.file <- basename(out.file.list)
+meta.cellnames.file$subset.bam.path <- out.file.list
+```
+*write lines to a script file is faster, because system() function cannot use all cores we asked. It's better to run script outside R. *
+
+```{bash eval=FALSE}
+bash 20211026_subset_bam.sh
+```
+
+# Generate attribute table 
+
+```{r}
+attribute.table <- data.frame(TRACK_ID=meta.cellnames.file$subset.bam.file, Group=meta.cellnames.file$sample, 
+                              Cluster=meta.cellnames.file$cluster, 
+                              Genotype=matrix(unlist(strsplit(meta.cellnames.file$sample, split = "_")), nrow = 2)[1,], 
+                              Treatment=matrix(unlist(strsplit(meta.cellnames.file$sample, split = "_")), nrow = 2)[2,])
+write.table(attribute.table, file = "./attribute_table.txt", quote = FALSE, sep = "\t", row.names = FALSE)
 ```
 
 
