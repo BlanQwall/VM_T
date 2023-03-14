@@ -1,7 +1,3 @@
-# VM_T
- Single-cell RNAseq analysis for  virtual Memory T cells. 
- 
- Hello Benjamin and Bin, 
- If you can see this page, that means you have accepted to collaborate on the project. This is still private project that no one has access to but only the invited people. 
- You will not need to do anything. I will progressively purge the codes and render them into PDF. Some of these steps has alread been done. 
- The final project will be released to public once paper done. 
+# IL-4 induces CD22 expression to restrain the effector program of self-reactive virtual memory T cells
+
+Parasitic helminths induce the production of interleukin (IL)-4 which causes the expansion of virtual memory CD8+ T cells (TVM), a cell subset contributing to the control of viral coinfection. However, the mechanisms regulating IL-4-dependent TVM activation and expansion during worm infection remain ill defined. We used single-cell RNA sequencing of CD8+ T cells to investigate IL-4-dependent TVM responses upon helminth infection in mice. Gene signature analysis of CD8+ T cells identified a cell cluster marked by CD22, a canonical regulator of B cell activation, as a specific and selective surface marker of IL-4-induced TVM cells. CD22+ TVM were enriched for IFN-γ and granzyme A and retained a diverse TCR repertoire, while enriched in CDR3 sequences with features of self-reactivity. Deletion of CD22 expression in CD8+ T cells enhanced TVM responses to helminth infection, indicating that this inhibitory receptor modulates TVM responses. Thus, helminth-induced IL-4 drives the expansion and activation of self-reactive TVM in the periphery that is counter-inhibited by CD22.
